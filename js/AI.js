@@ -1,4 +1,4 @@
-/* A Cleverbot App, meant to pass the Turing Test
+/* A Cleverbot Application, meant to pass the Turing Test
  * 
  * For CS427
  *
@@ -14,9 +14,11 @@ $('#usertext').keypress(function(event){
 
 /* reply
  * This function controls the overall flow for the cleverbot
+ * It grabs the input from the user and displays it and a reply
+ * on the html file
  * 
  * Takes: nothing
- * Returns: Output
+ * Returns: nothing
  */
 function reply() {
 	//get input
