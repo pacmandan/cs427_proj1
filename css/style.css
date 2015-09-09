@@ -1,0 +1,67 @@
+@font-face {
+	font-family: "existence";
+	src: url("../fonts/Existence-Light.otf") format("opentype");
+}
+
+html, body {
+	font-family: "existence";
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: #49464f;
+}
+.header {
+	color: #e3e4e6;
+	font-size: 36px;
+	padding-top: 20px;
+	position: absolute;
+	height: 10%;
+}
+.container {
+  width: 70%;
+  max-height: 80%;
+  overflow: auto;
+  margin: auto;
+  /*position: absolute;*/
+   left: 0; right: 0;
+  border-right: 1px;
+  border-left: 1px;
+  border-top: 0;
+  border-bottom: 0;
+  border-color: #e3e4e6;
+  border-style: solid;
+
+  /*background-color: #d9af63;*/
+}
+
+
+
+.input-group-addon {
+	border-radius: 0 !important;
+	background-color: #d9af63;
+	color: #e3e4e6;
+	border-width: 0px;
+}
+
+.input-group {
+	border-radius: 0px;
+	border-width: 0px;
+	bottom: 0;
+	/*padding: 50px 0px;*/
+}
+.input {
+	/*position: absolute;*/
+	width: 100%;
+	top: 0px;
+	margin-bottom: 50px;
+}
+.form-control {
+	border-radius: 0px !important;
+}
+
+.content {
+	color: #e3e4e6;
+	height: 100%;
+	position: absolute;
+}
+
