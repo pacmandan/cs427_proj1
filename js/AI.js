@@ -32,6 +32,12 @@ function reply() {
 	$('#container').scrollTop($("#container")[0].scrollHeight);
 	
 	//match complete phrases
+	$.ajax({
+		url: "./php/full.php",
+		method: "POST",
+		data: { input: input },
+		success: function(msg) { alert(msg); }
+	});
 	//match partial phrases
 	//parse
 	
