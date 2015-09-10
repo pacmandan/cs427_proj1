@@ -23,6 +23,8 @@ $('#usertext').keypress(function(event){
 function reply() {
 	//get input
 	var input = $('#usertext').val();
+	//clear out textbox
+	$('#usertext').val("");
 	//set input into html page
 	$('#container').append('<div class="user-content"><h3 class="user-text col-xs-12">' 
 							+ input + '</h3></div>');
