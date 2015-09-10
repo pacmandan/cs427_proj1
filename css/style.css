@@ -19,7 +19,9 @@ html, body {
 }
 .container {
   width: 70%;
+  max-width: 70%;
   max-height: 80%;
+  word-wrap: break-word;
   overflow: auto;
   margin: auto;
   /*position: absolute;*/
@@ -52,11 +54,15 @@ html, body {
 .input {
 	/*position: absolute;*/
 	width: 100%;
+	max-width: 100%;
+	word-wrap: break-word;
 	top: 0px;
 	margin-bottom: 50px;
 }
 .form-control {
 	border-radius: 0px !important;
+		max-width: 100%;
+	word-wrap: break-word;
 }
 
 .content {
