@@ -39,17 +39,12 @@ function reply() {
     output = matchPartial(input);
     if (output != "") { returnOutput(output); return; }
     
+	//check keywords
+    output = matchKeywords(input);
+    if (output != "") { returnOutput(output); return; }
+    
 	//parse
 	
-	//check keywords
-	var keywords = [
-	    {"key":"math","output":["In a group of 23 people, at least two have the same birthday with the probability greater than 1/2","The spiral shapes of sunflowers follow a Fibonacci sequence.","If you shuffle a pack of cards properly, chances are that exact order has never been seen before in the whole history of the universe.","10! seconds is exactly 6 weeks.","Complex number to a complex power may be real."]}
-	];
-	
-	keywords.forEach(function(data) { 
-	    var reg = new RegExp(data.key, "i");
-	    //do check here, then set output
-	});
 	
 	//default output
 	if (output == "") { output = "I don't understand."; }
@@ -151,6 +146,40 @@ function matchPartial(input) {
                 }
                 output = output + outputsq + add;
             }
+        }
+    });
+    
+    return output;
+}
+
+
+
+/* matchKeywords
+ * This function matches full sentences and picks an output
+ * 
+ * Takes: input - from user
+ * Returns: output - empty string or thing to reply
+ */
+function matchKeywords(input) {
+    var output = "";
+    var json = "";
+    
+    //get the json file
+    $.ajax({
+        url: "./keywords.json",
+        dataType: 'json',
+        async: false,
+        success: function(data) { json = data; }
+    });
+    
+    var keywords = json.keywords;
+    
+    //set output if it matches
+    keywords.forEach(function(data) {
+        if (data.input == input) {
+            var length = data.output.length;
+            var response = Math.floor(Math.random() * length);
+            output = data.output[response];
         }
     });
     

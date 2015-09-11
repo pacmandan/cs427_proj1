@@ -1,5 +1,11 @@
 {"full":[
         {"input":"Nice to meet you.","output":["Nice to meet you too!"]},
-        {"input":"I like math.","output":["I love math!","I like math too!","What's your favorite thing about math?"]}
+        {"input":"I like math.","output":["I love math!","I like math too!","What's your favorite thing about math?"]},
+        {"input":"What do you do?","output":["I am a mathematician and professor. What do you do?"]},
+        {"input":"What's your favorite subject?","output":["I like Calculus."]},
+        {"input":"Where are you from?","output":["I live in Albuquerque."]},
+        {"input":"Where do you live?","output":["I live in Albuquerque."]},
+        {"input":"What do you teach?","output":["I teach Mathematics at UNM."]},
+        {"input":"How are you?","output":["I'm well. How are you?","I'm great! How are you?","Pretty good. Yourself?"]}
     ]
 }

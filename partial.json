@@ -2,6 +2,7 @@
         {"regex":"^Hello{1}","output":["Hi!","Hello.","Hey"]},
 	    {"regex":"^I like{1}","output":["I like","I don't like"]},
 	    {"regex":"^I hate{1}","output":["I like","I don't like"]},
-	    {"regex":"^Math is{1}","output":["Math is great!"]}
+	    {"regex":"^Math is{1}","output":["Math is great!"]},
+	    {"regex":"Bye{1}","output":["Bye.","Goodbye!","Nice talking to you!","Talk to you later"]}
 	]
 }
