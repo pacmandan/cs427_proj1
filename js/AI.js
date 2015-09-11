@@ -84,11 +84,17 @@ function returnOutput(output) {
  */
 function matchComplete(input) {
     var output = "";
-    //full sentence matches
-	var full = [
-        {"input":"Nice to meet you.","output":["Nice to meet you too!"]},
-        {"input":"I like math.","output":["I love math!","I like math too!","What's your favorite thing about math?"]}
-    ];
+    var json = "";
+    
+    //get the json file
+    $.ajax({
+        url: "./full.json",
+        dataType: 'json',
+        async: false,
+        success: function(data) { json = data; }
+    });
+    
+    var full = json.full;
     
     //set output if it matches
     full.forEach(function(data) {
@@ -112,13 +118,17 @@ function matchComplete(input) {
  */
 function matchPartial(input) {
     var output = "";
-    //regexes and matches
-	var partial = [
-        {"regex":"^Hello{1}","output":["Hi!","Hello.","Hey"]},
-	    {"regex":"^I like{1}","output":["I like","I don't like"]},
-	    {"regex":"^I hate{1}","output":["I like","I don't like"]},
-	    {"regex":"^Math is{1}","output":["Math is great!"]}
-	];
+    var json = "";
+    
+    //get the json file
+    $.ajax({
+        url: "./partial.json",
+        dataType: 'json',
+        async: false,
+        success: function(data) { json = data; }
+    });
+    
+    var partial = json.partial;
 	
 	//set output if it matches
     partial.forEach(function(data) {
@@ -127,8 +137,11 @@ function matchPartial(input) {
             var length = data.output.length;
             var response = Math.floor(Math.random() * length);
             output = data.output[response];
+            
             var add = ""; //anything added to the end
             if (output == "I like") { add = " too!"; }
+            if (output == "I don't like") { add = "."; }
+            
             //handle I like x and I don't like y
             if ((output == "I like") || (output == "I don't like")) {            
                 var stringl = data.regex.length - 4;
