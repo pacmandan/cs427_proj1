@@ -1,0 +1,5 @@
+{"full":[
+        {"input":"Nice to meet you.","output":["Nice to meet you too!"]},
+        {"input":"I like math.","output":["I love math!","I like math too!","What's your favorite thing about math?"]}
+    ]
+}
