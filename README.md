@@ -5,4 +5,5 @@ Katelyn Narum
 Dan Green
 Peter Ortegel
 
-This is a test update.
+You can use the chatbot program by going to http://cs.unm.edu/~teatoves/CS427/index.html
+

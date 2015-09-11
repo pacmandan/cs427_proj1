@@ -1,0 +1,6 @@
+The work was done as so:
+
+All HTML and CSS was done by Peter Ortegel
+The parser was set up by Dan Green
+All other code was written by Katelyn Narum
+The json files that hold the input-output information were contributed to by everyone on the team.
