@@ -8,7 +8,7 @@
         {"regex":"Calculus","output":["Calculus is my favorite subject","I teach Calculus"]},
         {"regex":"UNM","output":["I teach at UNM.","I enjoy my job at UNM.","UNM is a great school.","I teach Math at UNM."]},
         {"regex":"hobby","output":["I like to ice skate in my free time.","I play the Cello as a hobby."]},
-        {"regex":"free time","output":["I like to ice skate in my free time.","I play the Cello as a hobby."]}
+        {"regex":"free time","output":["I like to ice skate in my free time.","I play the Cello as a hobby."]},
         {"regex":"ice skate","output":["I like to ice skate in my free time.","I wish I could go ice skating in the summer.","I love the feeling of gliding over the ice.","It hurts really badly when I fall on the ice."]},
         {"regex":"ice skating","output":["I like to ice skate in my free time.","I wish I could go ice skating in the summer.","I love the feeling of gliding over the ice.","It hurts really badly when I fall on the ice."]},
         {"regex":"cello","output":["I play the cello as a hobby.","I enjoy playing music.","I learned to play cello as a child."]},

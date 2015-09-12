@@ -46,6 +46,34 @@ function reply() {
     
     //parse
     var parsedInput = parseSentence(input);
+    var length = parsedInput.length;
+    var number = Math.floor(Math.random() * length);
+    
+    var word = parsedInput[number];
+    alert(word.word + " " + word.pos);
+    
+    //get the json file
+    $.ajax({
+        url: "./sentences.json",
+        dataType: 'json',
+        async: false,
+        success: function(data) { json = data; }
+    });
+    
+    var sentences = json.sentences;
+    
+    //set output if it matches
+    sentences.forEach(function(data) {
+        if (word.word == "I") { word.word = "you"; word.pos = "pronoun"; }
+        if ((word.word == "you") || (word.word == "You")) { word.word = "me"; word.pos = "pronoun"; }
+        if (data.type == word.pos) {
+            var length = data.output.length;
+            var response = Math.floor(Math.random() * length);
+            output = data.output[response] + word.word;
+        }
+    });
+    
+    
 	
 	//default output
 	if (output == "") { output = "I don't understand."; }
@@ -143,7 +171,8 @@ function matchPartial(input) {
             if ((output == "I like") || (output == "I don't like")) {            
                 var stringl = data.regex.length - 4;
                 var outputsq = input.substring(stringl);
-                if (/./.test(outputsq,"i")) {
+                var reg2 = new RegExp(".","i");
+                if (reg2.test(outputsq,"i")) {
                     outputsq = outputsq.substring(0,outputsq.length-1);
                 }
                 output = output + outputsq + add;
@@ -177,8 +206,9 @@ function matchKeywords(input) {
     var keywords = json.keywords;
     
     //set output if it matches
-    keywords.forEach(function(data) {
-        if (data.input == input) {
+    keywords.forEach(function(data) { 
+        var reg = new RegExp(data.regex,"i");
+        if (reg.test(input)) {
             var length = data.output.length;
             var response = Math.floor(Math.random() * length);
             output = data.output[response];
