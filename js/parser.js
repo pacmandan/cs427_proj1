@@ -12,14 +12,16 @@ function parseSentence(input) {
 	var word = taggedWord[0];
 	var tag = taggedWord[1];
 	if(isNoun(tag))
-	    importantWords.push({word: word, pos: 'noun', tag: tag});
+	    importantWords.push({word: word, weight: 10, pos: 'noun', tag: tag});
 	if(isVerb(tag))
-	    importantWords.push({word: word, pos: 'verb', tag: tag});
+	    importantWords.push({word: word, weight: 7, pos: 'verb', tag: tag});
 	if(isInterjection(tag))
-	    importantWords.push({word: word, pos: 'interjection', tag: tag});
+	    importantWords.push({word: word, weight: 3, pos: 'interjection', tag: tag});
 	if(isPronoun(tag))
-	    importantWords.push({word: word, pos: 'pronoun', tag: tag});
+	    importantWords.push({word: word, weight: 1, pos: 'pronoun', tag: tag});
     }
+    
+    importantWords = _.sortByOrder(importantWords, ['weight'], ['desc']);
     
     return importantWords;
 }
