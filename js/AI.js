@@ -51,9 +51,8 @@ function reply() {
     var number = Math.floor(Math.random() * length);
     
     var word = parsedInput[number];
-    
     //get sentence
-    output = outputSentence(word);
+    if (word !== undefined) { output = outputSentence(word); }
 	
 	//default output
 	if (output == "") { output = "I don't understand."; }
