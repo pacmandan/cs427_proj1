@@ -1,8 +1,8 @@
 {"partial":[
         {"regex":"^Hello{1}","output":["Hi!","Hello.","Hey"]},
-	    {"regex":"^I like{1}","output":["I like","I don't like"]},
-	    {"regex":"^I hate{1}","output":["I like","I don't like"]},
-	    {"regex":"^Math is{1}","output":["Math is great!"]},
-	    {"regex":"Bye{1}","output":["Bye.","Goodbye!","Nice talking to you!","Talk to you later"]}
+	    {"regex":"^I like{1}","output":["I like","I don't like","I don't care about"]},
+	    {"regex":"^I hate{1}","output":["I like","I don't like","I don't care about"]},
+	    {"regex":"^Math is{1}","output":["Math is great!","Math is fun.","I enjoy math.","How do you feel about math?"]},
+	    {"regex":"Bye{1}","output":["Bye.","Goodbye!","Nice talking to you!","Talk to you later."]}
 	]
 }
