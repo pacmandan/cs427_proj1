@@ -1,0 +1,15 @@
+{"sentences":[
+        {"type":"noun","output":[
+            "What is ", "I need ", "Do you eat ", "Why would I care about ", "I don't understand ", "I'm always amazed by ", "I like to bask in ", "Do you arrange ", "Do you bandage ", "Do you like "
+        ]},
+        {"type":"verb","output":[
+            "I also like to ", "Do you ", "Do you like to ", "Have you ever ", "I have ", "I never ", "I've never", "I "
+        ]},
+        {"type":"interjection","output":[
+            "Uh... "
+        ]},
+        {"type":"pronoun","output":[
+            "I like ", "I don't like ", "Do you know "
+        ]}
+    ]
+}
