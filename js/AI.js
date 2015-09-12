@@ -209,29 +209,34 @@ function matchKeywords(input) {
 function outputSentence(word) {
     var output = "";
     
-    //get the json file
-    $.ajax({
-        url: "./sentences.json",
-        dataType: 'json',
-        async: false,
-        success: function(data) { json = data; }
-    });
+    if (word.pos == "question") {
+        output = word.word + " " + word.word + "?";
+    }
+    else {
+        //get the json file
+        $.ajax({
+            url: "./sentences.json",
+            dataType: 'json',
+            async: false,
+            success: function(data) { json = data; }
+        });
     
-    var sentences = json.sentences;
+        var sentences = json.sentences;
     
-    //set output if it matches
-    sentences.forEach(function(data) {
-        if (word.word == "I") { word.word = "you"; word.pos = "pronoun"; }
-        if ((word.word == "you") || (word.word == "You")) { word.word = "me"; word.pos = "pronoun"; }
-        if ((word.word == "he") || (word.word == "He")) { word.word = "him"; word.pos = "pronoun"; }
-        if ((word.word == "she") || (word.word == "She")) { word.word = "her"; word.pos = "pronoun"; }
-        if ((word.word == "they") || (word.word == "They")) { word.word = "them"; word.pos = "pronoun"; }
-        if (data.type == word.pos) {
-            var length = data.output.length;
-            var response = Math.floor(Math.random() * length);
-            output = data.output[response] + word.word;
-        }
-    });
+        //set output if it matches
+        sentences.forEach(function(data) {
+            if (word.word == "I") { word.word = "you"; word.pos = "pronoun"; }
+            if ((word.word == "you") || (word.word == "You")) { word.word = "me"; word.pos = "pronoun"; }
+            if ((word.word == "he") || (word.word == "He")) { word.word = "him"; word.pos = "pronoun"; }
+            if ((word.word == "she") || (word.word == "She")) { word.word = "her"; word.pos = "pronoun"; }
+            if ((word.word == "they") || (word.word == "They")) { word.word = "them"; word.pos = "pronoun"; }
+            if (data.type == word.pos) {
+                var length = data.output.length;
+                var response = Math.floor(Math.random() * length);
+                output = data.output[response] + word.word;
+            }
+        });
+    }
     
     return output;
 }
