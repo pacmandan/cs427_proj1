@@ -23,6 +23,7 @@ $('#usertext').keypress(function(event){
 function reply() {
 	//get input
 	var input = $('#usertext').val();
+    
 	//clear out textbox
 	$('#usertext').val("");
 	//set input into html page
@@ -43,8 +44,8 @@ function reply() {
     output = matchKeywords(input);
     if (output != "") { returnOutput(output); return; }
     
-	//parse
-	
+    //parse
+    var parsedInput = parseSentence(input);
 	
 	//default output
 	if (output == "") { output = "I don't understand."; }
@@ -60,6 +61,7 @@ function reply() {
  * 
  * Takes: output
  * Returns: nothing
+
  */
 function returnOutput(output) {
 	//return output
