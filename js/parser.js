@@ -21,6 +21,8 @@ function parseSentence(input) {
 	    importantWords.push({word: word, weight: 1, pos: 'pronoun', tag: tag});
     }
     
+    importantWords = _.sortByOrder(importantWords, ['weight'], ['desc']);
+    
     return importantWords;
 }
 
