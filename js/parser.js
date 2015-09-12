@@ -15,6 +15,8 @@ function parseSentence(input) {
 	    importantWords.push({word: word, pos: 'noun', tag: tag});
 	if(isVerb(tag))
 	    importantWords.push({word: word, pos: 'verb', tag: tag});
+	if(isQuestion(tag))
+	    importantWords.push({word: word, pos: 'question', tag: tag});
 	if(isInterjection(tag))
 	    importantWords.push({word: word, pos: 'interjection', tag: tag});
 	if(isPronoun(tag))
@@ -26,12 +28,25 @@ function parseSentence(input) {
     return importantWords;
 }
 
+function fillInWord(sentence, word) {
+    var delim = '_word_';
+    if(sentence.indexOf(delim) >= 0) {
+	return sentence.replace(delim, word);
+    } else {
+	return sentence + word;
+    }
+}
+
 function isNoun(part_of_speech) {
     return _.startsWith(part_of_speech, 'NN');
 }
 
 function isVerb(part_of_speech) {
     return _.startsWith(part_of_speech, 'VB');
+}
+
+function isQuestion(part_of_speech) {
+    return _.startsWith(part_of_speech, 'W');
 }
 
 function isInterjection(part_of_speech) {
