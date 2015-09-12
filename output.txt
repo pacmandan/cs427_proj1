@@ -1,0 +1,26 @@
+Sample output:
+
+Me: What is the meaning of life?
+Bot: Do you like life
+Me: Is that a threat?
+Bot: Do you arrange threat
+Me: Are you threatening me?
+Bot: Do you threatening
+Me: Hey! I am asking the questions here!
+Bot: You asking
+Me: Yes, that is what I said.
+Bot: I like me
+Me: Well good for you.
+Bot: I like me
+Me: What else do you like?
+Bot: What What?
+Me: Do you like math?
+Bot: In a group of 23 people, at least two have the same birthday with the probability greater than 1/2
+Me: Tell me more about math!
+Bot: The spiral shapes of sunflowers follow a Fibonacci sequence.
+Me: Thanks
+Bot: Do you eat Thanks
+Me: I think we are done here.
+Bot: Do you like to think
+Me: Sometimes yes.
+Bot: Uh... yes
